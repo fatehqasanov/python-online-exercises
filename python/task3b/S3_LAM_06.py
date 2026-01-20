@@ -1,12 +1,11 @@
-"""
-S3_LAM_06.py
-Auto-generated template.
-Fill in the implementation according to the exercise description.
-"""
+def map_values(d, fn):
+    return {k: fn(v) for k, v in d.items()}
+
 
 def main():
-    # TODO: implement exercise
-    pass
+    data = {"a": 1, "b": 2, "c": 3}
+    print(map_values(data, lambda x: x * 10))
+
 
 if __name__ == "__main__":
     main()
