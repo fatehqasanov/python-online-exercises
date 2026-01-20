@@ -1,12 +1,14 @@
-"""
-S0_SETUP_03.py
-Auto-generated template.
-Fill in the implementation according to the exercise description.
-"""
+def eq(actual, expected):
+    """
+    Minimal test helper.
+    Raises AssertionError if values differ.
+    """
+    if actual != expected:
+        raise AssertionError(f"Expected {expected!r}, got {actual!r}")
 
 def main():
-    # TODO: implement exercise
-    pass
+    eq(2 + 2, 4)
+    print("eq() helper works")
 
 if __name__ == "__main__":
     main()
