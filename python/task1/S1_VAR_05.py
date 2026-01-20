@@ -1,12 +1,13 @@
-"""
-S1_VAR_05.py
-Auto-generated template.
-Fill in the implementation according to the exercise description.
-"""
+def is_truthy(v):
+    return bool(v)
+
 
 def main():
-    # TODO: implement exercise
-    pass
+    test_values = [0, 1, "", "0", [], [0], {}, None]
+
+    for v in test_values:
+        print(f"{v!r:<6} -> {is_truthy(v)}")
+
 
 if __name__ == "__main__":
     main()
