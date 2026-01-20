@@ -1,19 +1,35 @@
-def normalize_name(x):
-    if not x:
-        return "Anonymous"
+def calc(a, op, b):
+    if not isinstance(a, (int, float)) or not isinstance(b, (int, float)):
+        return None
 
-    name = x.strip()
-    if not name:
-        return "Anonymous"
-
-    return name
+    match op:
+        case "+":
+            return a + b
+        case "-":
+            return a - b
+        case "*":
+            return a * b
+        case "/":
+            if b == 0:
+                return None
+            return a / b
+        case _:
+            return None
 
 
 def main():
-    tests = ["", " ", None, " Ola "]
+    tests = [
+        (2, "+", 3),
+        (10, "-", 4),
+        (3, "*", 5),
+        (8, "/", 2),
+        (8, "/", 0),
+        ("2", "+", 3),
+        (1, "^", 2),
+    ]
 
-    for t in tests:
-        print(f"{t!r} -> {normalize_name(t)}")
+    for a, op, b in tests:
+        print((a, op, b), "->", calc(a, op, b))
 
 
 if __name__ == "__main__":
