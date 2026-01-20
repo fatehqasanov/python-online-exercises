@@ -1,12 +1,6 @@
-"""
-S0_SETUP_01.py
-Auto-generated template.
-Fill in the implementation according to the exercise description.
-"""
-
 def main():
-    # TODO: implement exercise
-    pass
+    print("It works")
+    print("It works (edited message)")
 
 if __name__ == "__main__":
     main()
