@@ -1,12 +1,15 @@
-"""
-S2_FOR_02.py
-Auto-generated template.
-Fill in the implementation according to the exercise description.
-"""
+def find_first_even(nums):
+    for n in nums:
+        if n % 2 == 0:
+            return n
+    return None
+
 
 def main():
-    # TODO: implement exercise
-    pass
+    print(find_first_even([1, 3, 5, 8, 10]))
+    print(find_first_even([1, 3, 5]))
+    print(find_first_even([]))
+
 
 if __name__ == "__main__":
     main()
