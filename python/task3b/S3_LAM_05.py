@@ -1,12 +1,13 @@
-"""
-S3_LAM_05.py
-Auto-generated template.
-Fill in the implementation according to the exercise description.
-"""
+def at_least(min_value):
+    return lambda x: x >= min_value
+
 
 def main():
-    # TODO: implement exercise
-    pass
+    nums = [1, 5, 10, 15]
+
+    pred = at_least(10)
+    print(list(filter(pred, nums)))
+
 
 if __name__ == "__main__":
     main()
