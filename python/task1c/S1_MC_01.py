@@ -1,32 +1,26 @@
-def shipping_cost(weight_kg, is_member):
-    if not isinstance(weight_kg, (int, float)) or weight_kg <= 0:
-        return None
-
-    if weight_kg <= 1:
-        cost = 10
-    elif weight_kg <= 5:
-        cost = 20
-    else:
-        cost = 30
-
-    if is_member:
-        cost *= 0.8
-
-    return cost
+def day_name(n: int):
+    match n:
+        case 1:
+            return "Monday"
+        case 2:
+            return "Tuesday"
+        case 3:
+            return "Wednesday"
+        case 4:
+            return "Thursday"
+        case 5:
+            return "Friday"
+        case 6:
+            return "Saturday"
+        case 7:
+            return "Sunday"
+        case _:
+            return None
 
 
 def main():
-    tests = [
-        (0.5, False),
-        (1, True),
-        (3, False),
-        (5, True),
-        (10, False),
-        (-1, True),
-    ]
-
-    for w, m in tests:
-        print(w, m, "->", shipping_cost(w, m))
+    for n in [0, 1, 5, 7, 8]:
+        print(n, "->", day_name(n))
 
 
 if __name__ == "__main__":
