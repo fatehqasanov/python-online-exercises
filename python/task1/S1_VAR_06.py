@@ -1,12 +1,16 @@
-"""
-S1_VAR_06.py
-Auto-generated template.
-Fill in the implementation according to the exercise description.
-"""
+def to_int_or_none(s):
+    try:
+        return int(s)
+    except (TypeError, ValueError):
+        return None
+
 
 def main():
-    # TODO: implement exercise
-    pass
+    tests = ["12", " 12 ", "12x", "", None]
+
+    for t in tests:
+        print(f"{t!r:>6} -> {to_int_or_none(t)}")
+
 
 if __name__ == "__main__":
     main()
