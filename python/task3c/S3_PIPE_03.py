@@ -1,12 +1,13 @@
-"""
-S3_PIPE_03.py
-Auto-generated template.
-Fill in the implementation according to the exercise description.
-"""
+import re
+
+
+def normalize(s):
+    return re.sub(r"\s+", " ", s.strip().lower())
+
 
 def main():
-    # TODO: implement exercise
-    pass
+    print(normalize("  Ala   Ma   Kota  "))
+
 
 if __name__ == "__main__":
     main()
