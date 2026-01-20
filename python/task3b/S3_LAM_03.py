@@ -1,12 +1,14 @@
-"""
-S3_LAM_03.py
-Auto-generated template.
-Fill in the implementation according to the exercise description.
-"""
+def make_adder(x):
+    return lambda y: x + y
+
 
 def main():
-    # TODO: implement exercise
-    pass
+    add10 = make_adder(10)
+    add3 = make_adder(3)
+
+    print(add10(5))
+    print(add3(7))
+
 
 if __name__ == "__main__":
     main()
