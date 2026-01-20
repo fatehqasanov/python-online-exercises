@@ -1,12 +1,17 @@
-"""
-S2_FOR_04.py
-Auto-generated template.
-Fill in the implementation according to the exercise description.
-"""
+def count_occurrences(values):
+    counts = {}
+    for v in values:
+        if v in counts:
+            counts[v] += 1
+        else:
+            counts[v] = 1
+    return counts
+
 
 def main():
-    # TODO: implement exercise
-    pass
+    print(count_occurrences(["a", "b", "a", "c", "b", "a"]))
+    print(count_occurrences([1, 2, 2, 3, 3, 3]))
+
 
 if __name__ == "__main__":
     main()
