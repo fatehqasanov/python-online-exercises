@@ -1,14 +1,18 @@
+def get_path(obj, path, fallback=None):
+    current = obj
+    for part in path.split("."):
+        if not isinstance(current, dict) or part not in current:
+            return fallback
+        current = current[part]
+    return current
+
+
 def main():
-    n = 30
-    for i in range(1, n + 1):
-        if i % 15 == 0:
-            print("FizzBuzz")
-        elif i % 3 == 0:
-            print("Fizz")
-        elif i % 5 == 0:
-            print("Buzz")
-        else:
-            print(i)
+    data = {"a": {"b": {"c": 42}}}
+
+    print(get_path(data, "a.b.c", None))
+    print(get_path(data, "a.b.x", "N/A"))
+    print(get_path(data, "a.b.c.d", "N/A"))
 
 
 if __name__ == "__main__":
