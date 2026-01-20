@@ -1,12 +1,20 @@
-"""
-S3_PIPE_02.py
-Auto-generated template.
-Fill in the implementation according to the exercise description.
-"""
+def compose(*fns):
+    def run(x):
+        for fn in reversed(fns):
+            x = fn(x)
+        return x
+    return run
+
 
 def main():
-    # TODO: implement exercise
-    pass
+    f = compose(
+        lambda x: x + 1,
+        lambda x: x * 2,
+        lambda x: x - 3,
+    )
+
+    print(f(5))  # (5-3)*2+1 = 5
+
 
 if __name__ == "__main__":
     main()
